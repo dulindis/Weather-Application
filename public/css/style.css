@@ -1,84 +1,66 @@
 body {
-    font-family: arial, sans-serif;
-    color: #333;
+  font-family: arial, sans-serif;
+  color: #333;
+}
+body .wrapper {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+body .wrapper .heading-1 {
+  font-weight: 700;
+  font-size: 72px;
+}
+body .wrapper .heading-2 {
+  font-weight: 300;
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #444;
+}
+body .wrapper .navigation {
+  color: #888;
+  list-style: none;
+  display: flex;
+  border-bottom: 1px solid #888;
+  padding: 15px 0;
+}
+body .wrapper .navigation li a {
+  color: #888;
+  margin-right: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  font-style: 36px;
+}
+body .wrapper .error-msg {
+  font-weight: 700;
+}
+body .wrapper button {
+  cursor: pointer;
+  border: 1px solid #888;
+  background: #888;
+  color: white;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+body .wrapper .weather {
+  flex-grow: 1;
+}
+body .wrapper .weather .input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 30px 0;
+  border-radius: 2px;
+  /* flex-grow: 1; */
+}
+body .wrapper .weather #submit-btn {
+  margin-left: 5px;
+}
+body .wrapper footer {
+  padding: 10px 10px 10px 0;
+  margin: 30px 0;
 }
 
-.wrapper {
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.weather {
-    flex-grow: 1;
-}
-
-.heading-1 {
-    font-weight: 700;
-    font-size: 72px;
-}
-
-.heading-2 {
-    font-weight: 300;
-    font-size: 36px;
-    text-transform: uppercase;
-    color: #444;
-
-}
-
-.navigation {
-    color: #888;
-    list-style: none;
-    display: flex;
-    border-bottom: 1px solid #888;
-    padding: 15px 0;
-
-}
-
-
-li a {
-    color: #888;
-    margin-right: 16px;
-    text-decoration: none;
-    cursor: pointer;
-    font-style: 36px;
-}
-
-.error-msg {
-    font-weight: 700;
-}
-
-/* form {
-    display: flex;
-} */
-
-.input {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 30px 0;
-    border-radius: 2px;
-
-    /* flex-grow: 1; */
-}
-
-
-button {
-    cursor: pointer;
-    border: 1px solid #888;
-    background: #888;
-    color: white;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-}
-
-#submit-btn {
-    margin-left: 5px
-}
-
-footer {
-    padding: 10px 10px 10px 0;
-    margin: 30px 0;
-}
+/*# sourceMappingURL=style.css.map */
