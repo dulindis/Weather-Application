@@ -38,9 +38,15 @@ app.get('/weather', (req, res) => {
     } else {
         //we want to find the function to run
 
-        geocode(req.query.address, forecast);
-        console.log('geocoding', req.query.address);
-        //geocode(res.query.address, forecast)
+        geocode(req.query.address, (error, {location, latitude, longitude}) => {
+            if (error) {
+                return res.send('error message from geocode', error);
+            }
+
+            //forecast(error, correctdataforcallback)
+
+        });
+
 
         res.render('index', {
             city: req.query.address,
