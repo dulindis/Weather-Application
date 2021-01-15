@@ -15,23 +15,24 @@
 
         <div class="weather">
             <form class="weather-form" action="">
-                <input class="input" for="submit-btn" type="text" placeholder="write the addres">
+                <input class="input" for="submit-btn" type="text" placeholder="write the addres" name="city">
                 <button id="submit-btn">sumbit</button>
             </form>
         </div>
+
         <div class="result">
-            <h3 class="city-name">{{city}}</h3>
-            <p class="forecast">forecast in here</p>
+            <h3 class="city-name">{{location}} {{lat}} {{long}}</h3>
+            <p class="forecast">{{forecast}}/p>
         </div>
 
-        {{!-- <input type="text" name="myText" value="Norway" selectBoxOptions="Canada;Denmark;Finland;Germany;Mexico">
-        createEditableSelect(document.forms[0].myText); --}}
-        {{!-- we can fo eapme change the value for the firs option from teh aray and aelecoboxoptios put other 3 options
-        from the aray we limit from --}}
+
 
         {{>footer}}
     </main>
-    <script src="/js/app.js"></script>
+      {{!-- <script src="../../node_modules/socket.io/dist/"></script> --}}
+
+    <script type="module" src="/js/app.js"></script>
+    
 </body>
 
 </html>

@@ -38,19 +38,41 @@ app.get('/weather', (req, res) => {
     } else {
         //we want to find the function to run
 
-        geocode(req.query.address, (error, {location, latitude, longitude}) => {
+        geocode(req.query.address, (error, {
+            location,
+            latitude,
+            longitude
+        }={}) => {
             if (error) {
-                return res.send('error message from geocode', error);
+                return res.send({error: `error message from geocode, ${error}`});
+
             }
 
-            //forecast(error, correctdataforcallback)
+            forecast(location, latitude, longitude, (error, forecastData) => {
+                if (error) {
+                    return res.send({error: `error message from forecast, ${error}`});
+                }
+
+                // res.render('index', {
+                //     location,
+                //     lat: latitude,
+                //     long: longitude,
+                //     forecast: forecastData
+                // })
+
+                res.send({
+                    location,
+                    lat:latitude,
+                    long:longitude,
+                    forecast:forecastData
+                })
+
+            })
 
         });
 
 
-        res.render('index', {
-            city: req.query.address,
-        })
+
     }
 
 })

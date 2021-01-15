@@ -8,12 +8,11 @@ const geocode = (address, callback) => {
     request({
         url,
         json: true
-    }, (err, res, body) => {
+    }, (err, {
+        body
+    }) => {
         if (err) {
-            // console.log('error:', err); // Print the error if one occurred
-            // console.log('statusCode:', res && res.statusCode); // Print the response status code if a response was received
             callback('server error -i.e network connection issue', undefined)
-            //send the reply though callback
         } else if (body.features === 0) {
             callback(`no results to show-no matches found`, undefined)
         } else {
@@ -24,7 +23,12 @@ const geocode = (address, callback) => {
             })
         }
     })
-    console.log(address);
+    // console.log(address);
+    // console.log({
+    //     location: body.features[0].place_name,
+    //     latitude: body.features[0].center[1],
+    //     longitude: body.features[0].center[0]
+    // });
 }
 
 export default geocode;
