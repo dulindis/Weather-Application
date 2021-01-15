@@ -17,6 +17,7 @@ const input = document.querySelector('.input');
 const submitBtn = document.getElementById('submit-btn');
 const cityName = document.querySelector('.city-name')
 const forecast = document.querySelector('.forecast')
+const coordinates = document.querySelector('.coordinates')
 
 cityName.textContent = "Write your city name";
 forecast.textContent = "";
@@ -25,6 +26,9 @@ weatherForm.addEventListener('submit', (ev) => {
     ev.preventDefault();
     const searchedCity = input.value;
     cityName.textContent = "Loading...";
+    cityName.textContent = ``;
+    coordinates.textContent = ``;
+    forecast.textContent = ``;
 
     fetch(`/weather?address=${searchedCity}`).then(data => console.log(data))
 
@@ -40,15 +44,19 @@ weatherForm.addEventListener('submit', (ev) => {
                 cityName.textContent('error', data.error)
             } else {
                 cityName.textContent = `${data.location}`;
-                cityName.textContent = `${ data.forecast}`;
+                coordinates.textContent = `latitude: ${data.lat}, longitude: ${data.long}`;
+                forecast.textContent = `${ data.forecast}`;
                 console.log(data.location);
                 console.log(data.forecast);
+                input.value="";
 
             }
             console.log(data);
+
         }).catch(error => {
             console.log(`error from fetch`, error);
         })
+     
 
 })
 

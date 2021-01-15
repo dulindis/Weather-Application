@@ -20,8 +20,7 @@ const forecast = (address, lat, long, callback) => {
             const parsedData = JSON.parse(body);
             console.log(parsedData);
             callback(undefined,
-                `The weather forecast for: ${parsedData.location.name} in ${parsedData.location.country}. 
-                In ${parsedData.location.name} is ${parsedData.location.is_day ? "day" : "night" }. The time now is ${parsedData.current.observation_time} o'clock. The current temperaure is ${parsedData.current.temperature} degrees, feels like ${parsedData.current.feelslike} degrees. The atmospheric pressure: ${parsedData.current.pressure}millibar. Cloud cover ${parsedData.current.cloudcover}. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.percip}mm. UV index for today: ${parsedData.current.uv_index}`
+                `Currently is ${parsedData.location.is_day ? "day" : "night" }. The current temperaure is ${parsedData.current.temperature} degrees, feels like ${parsedData.current.feelslike} degrees. The atmospheric pressure: ${parsedData.current.pressure}millibar. Cloud cover ${parsedData.current.cloudcover}. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.percip}mm. UV index for today: ${parsedData.current.uv_index}`
             )
         }
 
