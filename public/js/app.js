@@ -41,7 +41,7 @@ weatherForm.addEventListener('submit', (ev) => {
             }
         }).then(data => {
             if (data.error) {
-                cityName.textContent('error', data.error)
+                cityName.textContent = `error: ${data.error}`
             } else {
                 cityName.textContent = `${data.location}`;
                 coordinates.textContent = `latitude: ${data.lat}, longitude: ${data.long}`;

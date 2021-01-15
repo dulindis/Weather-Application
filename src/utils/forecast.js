@@ -9,18 +9,17 @@ const forecast = (address, lat, long, callback) => {
     } else if (address) {
         url = `http://api.weatherstack.com/current?access_key=382d14da2cc8605b1e21e3d45ceb637f&query=${address}`
     }
-    request(url, (err, {
-        body
-    }) => {
+    request(url, (err, {body}) => {
         if (err) {
-            callback(`unable to connec to weather service`, undefined)
+            callback(`unable to connect to weather service`, undefined)
         } else if (body.error) {
-            callback(`unable to find location ${error.info}`)
+            callback(`unable to find location ${error.info}`,undefined)
+            //callback(undefined,`unable to find location ${error.info}`)
         } else {
             const parsedData = JSON.parse(body);
-            console.log(parsedData);
+            //console.log(parsedData);
             callback(undefined,
-                `Currently is ${parsedData.location.is_day ? "day" : "night" }. The current temperaure is ${parsedData.current.temperature} degrees, feels like ${parsedData.current.feelslike} degrees. The atmospheric pressure: ${parsedData.current.pressure}millibar. Cloud cover ${parsedData.current.cloudcover}. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.percip}mm. UV index for today: ${parsedData.current.uv_index}`
+                `Currently is ${parsedData.location.is_day ? "day" : "night" }. Local time:${parsedData.location.localtime}.The current temperaure is ${parsedData.current.temperature} degrees, feels like ${parsedData.current.feelslike} degrees. The atmospheric pressure: ${parsedData.current.pressure}millibar. Cloud cover ${parsedData.current.cloudcover}. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.percip}mm. UV index for today: ${parsedData.current.uv_index}`
             )
         }
 
