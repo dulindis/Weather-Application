@@ -34,7 +34,7 @@ app.get('', (req, res) => {
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
-        return res.send({error: `You must provide a valid address.`})
+        return res.send({error: `You must provide a valid address`})
     } else {
         //we want to find the function to run
 
@@ -44,21 +44,13 @@ app.get('/weather', (req, res) => {
             longitude
         }={}) => {
             if (error) {
-                return res.send({error: `error message from geocode, ${error}`});
-
+                return res.send({error: `${error}`});
             }
 
             forecast(location, latitude, longitude, (error, forecastData) => {
                 if (error) {
-                    return res.send({error: `error message from forecast, ${error}`});
+                    return res.send({error: `${error}`});
                 }
-
-                // res.render('index', {
-                //     location,
-                //     lat: latitude,
-                //     long: longitude,
-                //     forecast: forecastData
-                // })
 
                 res.send({
                     location,
@@ -66,15 +58,9 @@ app.get('/weather', (req, res) => {
                     long:longitude,
                     forecast:forecastData
                 })
-
             })
-
         });
-
-
-
     }
-
 })
 
 app.get('/about', (req, res) => {
@@ -94,9 +80,8 @@ app.get('/contact', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    // return res.send('<h1>404. Page not found. Please write another url.</h1>')
     res.render('404', {
-        title:'404',
+        title:'ERROR 404',
         error: 'Page not found. Please type another url.'
     })
 })

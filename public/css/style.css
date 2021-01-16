@@ -21,6 +21,13 @@ body .wrapper .heading-2 {
   color: #444;
   margin-top: 0;
 }
+body .wrapper .heading-3 {
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+body .wrapper .e-mail {
+  font-weight: 600;
+}
 body .wrapper .navigation {
   color: #888;
   list-style: none;
@@ -60,11 +67,11 @@ body .wrapper .flex-grow .input {
 body .wrapper .flex-grow #submit-btn {
   margin-left: 5px;
 }
+body .wrapper .flex-grow .task {
+  color: #888;
+}
 body .wrapper .flex-grow .incorrect {
   color: darkred;
-}
-body .wrapper .flex-grow .city-name, body .wrapper .flex-grow .task {
-  text-transform: uppercase;
 }
 body .wrapper .flex-grow #forecast-image .active-image {
   width: 30px;

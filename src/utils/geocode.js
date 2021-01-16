@@ -11,9 +11,9 @@ const geocode = (address, callback) => {
     }, (err, {body}) => {
         console.log(body.features[0]);
         if (err) {
-            callback('Unable to connect to location sercives. server error -i.e network connection issue', undefined)
+            callback('Network connection issue - Unable to connect to location services ', undefined)
         } else if (body.features.length === 0) {
-            callback(`Unable to find the provided location. Try another search`, undefined)
+            callback(`Unable to find the provided location - Try another search`, undefined)
         } else {
             callback(undefined, {
                 // location: body.features[0].place_name,
