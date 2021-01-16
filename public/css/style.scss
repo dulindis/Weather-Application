@@ -12,6 +12,7 @@ body {
         .heading-1 {
             font-weight: 700;
             font-size: 72px;
+             margin-bottom:30px;
         }
 
         .heading-2 {
@@ -19,6 +20,7 @@ body {
             font-size: 36px;
             text-transform: uppercase;
             color: #444;
+            margin-top:0;
 
         }
 
@@ -53,13 +55,13 @@ body {
             border-radius: 2px;
         }
 
-        .weather {
+        .flex-grow {
             flex-grow: 1;
 
             .input {
                 border: 1px solid #ccc;
                 padding: 10px;
-                margin: 30px 0;
+                margin: 0 0 30px 0;
                 border-radius: 2px;
 
                 /* flex-grow: 1; */
@@ -68,12 +70,31 @@ body {
             #submit-btn {
                 margin-left: 5px
             }
+            .incorrect {
+                color: rgb(139, 0, 0)
+            }
+            .city-name, .task {
+                text-transform: uppercase;
+            }
+
+            #forecast-image .active-image {
+                width: 30px;
+
+                img {
+                    width: 100%;
+                    background-size: cover;
+                }
+
+            }
 
         }
 
         footer {
             padding: 10px 10px 10px 0;
             margin: 30px 0;
+            .created {
+                font-weight: 600;
+            }
         }
 
     }

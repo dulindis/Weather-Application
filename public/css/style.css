@@ -12,12 +12,14 @@ body .wrapper {
 body .wrapper .heading-1 {
   font-weight: 700;
   font-size: 72px;
+  margin-bottom: 30px;
 }
 body .wrapper .heading-2 {
   font-weight: 300;
   font-size: 36px;
   text-transform: uppercase;
   color: #444;
+  margin-top: 0;
 }
 body .wrapper .navigation {
   color: #888;
@@ -45,22 +47,38 @@ body .wrapper button {
   text-transform: uppercase;
   border-radius: 2px;
 }
-body .wrapper .weather {
+body .wrapper .flex-grow {
   flex-grow: 1;
 }
-body .wrapper .weather .input {
+body .wrapper .flex-grow .input {
   border: 1px solid #ccc;
   padding: 10px;
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   border-radius: 2px;
   /* flex-grow: 1; */
 }
-body .wrapper .weather #submit-btn {
+body .wrapper .flex-grow #submit-btn {
   margin-left: 5px;
+}
+body .wrapper .flex-grow .incorrect {
+  color: darkred;
+}
+body .wrapper .flex-grow .city-name, body .wrapper .flex-grow .task {
+  text-transform: uppercase;
+}
+body .wrapper .flex-grow #forecast-image .active-image {
+  width: 30px;
+}
+body .wrapper .flex-grow #forecast-image .active-image img {
+  width: 100%;
+  background-size: cover;
 }
 body .wrapper footer {
   padding: 10px 10px 10px 0;
   margin: 30px 0;
+}
+body .wrapper footer .created {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -27,14 +27,14 @@ app.use(express.static(publicDir))
 //home page
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'home page',
+        title: 'Home Page',
         name: 'Paulina Okulska'
     })
 })
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
-        return res.send('address not found')
+        return res.send({error: `You must provide a valid address.`})
     } else {
         //we want to find the function to run
 
@@ -78,16 +78,25 @@ app.get('/weather', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about', {
+        title: 'About',
+        name: 'Paulina Okulska',
+        text:'about me and the page'
+    })
 })
 
 app.get('/contact', (req, res) => {
-    res.render('contact')
+    res.render('contact', {
+        title: 'Contact',
+        name: 'Paulina Okulska',
+        text:'about me and the page'
+    })
 })
 
 app.get('*', (req, res) => {
     // return res.send('<h1>404. Page not found. Please write another url.</h1>')
     res.render('404', {
+        title:'404',
         error: 'Page not found. Please type another url.'
     })
 })

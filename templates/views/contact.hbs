@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Weather App - {{title}}</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -12,7 +12,19 @@
     <main class="wrapper">
         {{>header}}
 
-        <p>Contact</p>
+        <div class="flex-grow">
+            <h3>{{title}}</h3>
+            <h4 class="contact-details">
+                You can contact me by:
+            </h4>
+            <ul>
+                <li>e-mail: <span>paulinaokulska@mail.com</span></li>
+                <li>discord: <span>@Altairka</span></li>
+                <li>contact form</li>
+            </ul>
+
+            <form action="" class="contac-form"></form>
+        </div>
 
 
         {{>footer}}

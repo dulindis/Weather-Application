@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Page Not found</title>
+    <title>Weather App - {{title}}</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <main class="wrapper">
         {{>header}}
-        <p class="error-msg">{{error}}</p>
+        <div class="flex-grow">
+            <p class="error-msg">{{error}}</p>
+        </div>
         {{>footer}}
     </main>
 </body>
