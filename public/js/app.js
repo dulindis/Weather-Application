@@ -14,7 +14,14 @@ forecast.textContent = "";
 weatherForm.addEventListener('submit', (ev) => {
     ev.preventDefault();
     const searchedCity = input.value;
-    cityName.textContent = "Loading...";
+    cityName.innerHTML=`
+    <div class="margin-left-30" data-title=".dot-flashing">
+        <div class="stage">
+            <div class="dot-flashing"></div>
+        </div>
+    </div>
+    `;
+    //cityName.textContent = "Loading...";
     cityName.classList.remove("incorrect");
     coordinates.textContent = ``;
     forecast.textContent = ``;
@@ -36,7 +43,7 @@ weatherForm.addEventListener('submit', (ev) => {
                 cityName.textContent = `${data.error}`
             } else {
                 cityName.textContent = `${data.location}`;
-                coordinates.textContent = `latitude: ${data.lat}, longitude: ${data.long}`;
+                coordinates.textContent = `Lat: ${data.lat}, Lon: ${data.long}`;
                 forecast.textContent = `${ data.forecast}`;
                 forecastContainer.classList.add("active");
                 forecastImg.setAttribute("src", data.forecastImgUrl);

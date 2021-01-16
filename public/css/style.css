@@ -94,5 +94,53 @@ body .wrapper footer {
 body .wrapper footer .created {
   font-weight: 600;
 }
+body .margin-left-30 {
+  margin-left: 30px;
+}
+body .dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9b95b8;
+  color: #9b95b8;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+body .dot-flashing::before,
+body .dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+body .dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9b95b8;
+  color: #9b95b8;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+body .dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9b95b8;
+  color: #9b95b8;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+@keyframes dotFlashing {
+  0% {
+    background-color: #9b95b8;
+  }
+  50%, 100% {
+    background-color: #ebe6ff;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
