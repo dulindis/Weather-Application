@@ -13,17 +13,22 @@ const forecast = (address, lat, long, callback) => {
         body
     }) => {
         if (err) {
-            callback(`unable to connect to weather service`, undefined)
-        } else if (body.error) {
-            callback(`unable to find location ${error.info}`, undefined)
+            callback,
+            callback2(`unable to connect to weather service`, undefined)
+        }
+        else if (body.error) {
+            callback,
+            callback2(`unable to find location ${error.info}`, undefined)
             //callback(undefined,`unable to find location ${error.info}`)
-        } else {
+        }
+        else {
             const parsedData = JSON.parse(body);
             console.log(parsedData);
-            callback(undefined,
-                `${parsedData.current.weather_descriptions}.
+            callback(undefined, {
+                forecastImgUrl: `${parsedData.current.weather_icons}`,
+                forecastData: `${parsedData.current.weather_descriptions}.
                 Local time:${parsedData.location.localtime}. Currently is ${parsedData.location.is_day ? "day" : "night" }. The temperaure at the moment estimated to be ${parsedData.current.temperature}\u00B0 C , feels like ${parsedData.current.feelslike} \u00B0 C. The atmospheric pressure of ${parsedData.current.pressure} millibar. Cloud cover ${parsedData.current.cloudcover}. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.percip}mm. UV index for today: ${parsedData.current.uv_index}. `
-            )
+            })
         }
 
 

@@ -73,12 +73,19 @@ body .wrapper .flex-grow .task {
 body .wrapper .flex-grow .incorrect {
   color: darkred;
 }
-body .wrapper .flex-grow #forecast-image .active-image {
+body .wrapper .flex-grow .forecast-container {
   width: 30px;
+  display: hidden;
+  border-radius: 2px;
+  overflow: hidden;
 }
-body .wrapper .flex-grow #forecast-image .active-image img {
+body .wrapper .flex-grow .forecast-container .active {
+  display: block;
+}
+body .wrapper .flex-grow .forecast-container #forecast-image {
   width: 100%;
   background-size: cover;
+  box-shadow: -2px 2px 2px -2px rgba(52, 52, 52, 0.75);
 }
 body .wrapper footer {
   padding: 10px 10px 10px 0;

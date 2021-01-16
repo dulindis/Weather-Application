@@ -10,9 +10,7 @@
 
 <body>
     <main class="wrapper">
-
         {{>header}}
-
         <div class="flex-grow">
             <div class="weather">
                 <form class="weather-form" action="">
@@ -23,18 +21,13 @@
                 <div class="result">
                     <h3 class="city-name heading-3">{{error}}</h3>
                     <h4 class="coordinates"></h4>
-                    <div id="forecast-image"><img src="#" alt=""></div>
+                    <div class="forecast-container"><img id="forecast-image"src="#" alt=""></div>
                     <p class="forecast"></p>
                 </div>
             </div>
         </div>
-
-
         {{>footer}}
     </main>
-    {{!--
-    <script src="../../node_modules/socket.io/dist/"></script> --}}
-
     <script type="module" src="/js/app.js"></script>
 
 </body>
