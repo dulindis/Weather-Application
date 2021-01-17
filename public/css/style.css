@@ -36,11 +36,18 @@ body .wrapper .navigation {
   padding: 15px 0;
 }
 body .wrapper .navigation li a {
-  color: #888;
+  color: #333;
   margin-right: 16px;
   text-decoration: none;
   cursor: pointer;
   font-style: 36px;
+}
+body .wrapper .navigation li a:hover {
+  border-bottom: 1px solid #888;
+  cursor: pointer;
+}
+body .wrapper .navigation li a.active {
+  border-bottom: 1px solid #444;
 }
 body .wrapper .error-msg {
   font-weight: 700;
@@ -94,10 +101,10 @@ body .wrapper footer {
 body .wrapper footer .created {
   font-weight: 600;
 }
-body .margin-left-30 {
+body .wrapper .margin-left-30 {
   margin-left: 30px;
 }
-body .dot-flashing {
+body .wrapper .dot-flashing {
   position: relative;
   width: 10px;
   height: 10px;
@@ -107,14 +114,14 @@ body .dot-flashing {
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: 0.5s;
 }
-body .dot-flashing::before,
-body .dot-flashing::after {
+body .wrapper .dot-flashing::before,
+body .wrapper .dot-flashing::after {
   content: "";
   display: inline-block;
   position: absolute;
   top: 0;
 }
-body .dot-flashing::before {
+body .wrapper .dot-flashing::before {
   left: -15px;
   width: 10px;
   height: 10px;
@@ -124,7 +131,7 @@ body .dot-flashing::before {
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 0s;
 }
-body .dot-flashing::after {
+body .wrapper .dot-flashing::after {
   left: 15px;
   width: 10px;
   height: 10px;

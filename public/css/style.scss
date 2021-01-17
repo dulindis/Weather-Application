@@ -1,8 +1,15 @@
+$loading-base-color:#9b95b8;
+$loading-end-color:#ebe6ff;
+$body-primary-color:#333;
+$body-secondary-color:#444;
+$body-tertiary-color:#888;
+
 body {
     font-family: arial, sans-serif;
-    color: #333;
+    color: $body-primary-color;
 
     .wrapper {
+
         width: 50%;
         margin: 0 auto;
         display: flex;
@@ -19,7 +26,7 @@ body {
             font-weight: 300;
             font-size: 36px;
             text-transform: uppercase;
-            color: #444;
+            color: $body-secondary-color;
             margin-top: 0;
 
         }
@@ -31,24 +38,33 @@ body {
 
         .e-mail {
             font-weight: 600;
-
         }
 
         .navigation {
-            color: #888;
+            color: $body-tertiary-color;
             list-style: none;
             display: flex;
             border-bottom: 1px solid #888;
             padding: 15px 0;
 
             li a {
-                color: #888;
+                color: $body-primary-color;
                 margin-right: 16px;
                 text-decoration: none;
                 cursor: pointer;
                 font-style: 36px;
-            }
 
+                &:hover {
+                    border-bottom: 1px solid $body-tertiary-color;
+                    cursor: pointer;
+                }
+
+                &.active {
+                    border-bottom: 1px solid $body-secondary-color;                }
+
+
+
+            }
         }
 
         .error-msg {
@@ -57,8 +73,8 @@ body {
 
         button {
             cursor: pointer;
-            border: 1px solid #888;
-            background: #888;
+            border: 1px solid $body-tertiary-color;
+            background: $body-tertiary-color;
             color: white;
             padding: 10px;
             text-transform: uppercase;
@@ -82,7 +98,7 @@ body {
             }
 
             .task {
-                color: #888;
+                color: $body-tertiary-color;
             }
 
             .incorrect {
@@ -118,66 +134,64 @@ body {
             }
         }
 
-    }
 
-
-    //styles for the loading animation
-    .margin-left-30 {
-        margin-left: 30px;
-    }
-
-    .dot-flashing {
-        position: relative;
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
-        background-color: #9b95b8;
-        color: #9b95b8;
-        animation: dotFlashing 1s infinite linear alternate;
-        animation-delay: .5s;
-    }
-
-    .dot-flashing::before,
-    .dot-flashing::after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 0;
-    }
-
-    .dot-flashing::before {
-        left: -15px;
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
-        background-color: #9b95b8;
-        color: #9b95b8;
-        animation: dotFlashing 1s infinite alternate;
-        animation-delay: 0s;
-    }
-
-    .dot-flashing::after {
-        left: 15px;
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
-        background-color: #9b95b8;
-        color: #9b95b8;
-        animation: dotFlashing 1s infinite alternate;
-        animation-delay: 1s;
-    }
-
-    @keyframes dotFlashing {
-        0% {
-            background-color: #9b95b8;
+        //styles for the loading animation
+        .margin-left-30 {
+            margin-left: 30px;
         }
 
-        50%,
-        100% {
-            background-color: #ebe6ff;
+        .dot-flashing {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: $loading-base-color;
+            color: $loading-base-color;
+            animation: dotFlashing 1s infinite linear alternate;
+            animation-delay: .5s;
         }
+
+        .dot-flashing::before,
+        .dot-flashing::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot-flashing::before {
+            left: -15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: $loading-base-color;
+            color: $loading-base-color;
+            animation: dotFlashing 1s infinite alternate;
+            animation-delay: 0s;
+        }
+
+        .dot-flashing::after {
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: $loading-base-color;
+            color: $loading-base-color;
+            animation: dotFlashing 1s infinite alternate;
+            animation-delay: 1s;
+        }
+
+        @keyframes dotFlashing {
+            0% {
+                background-color: $loading-base-color;
+            }
+
+            50%,
+            100% {
+                background-color: $loading-end-color;
+            }
+        }
+
     }
 
 }
-
-//TODO:make mediaqueries that its responsive
