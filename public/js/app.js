@@ -19,15 +19,11 @@ weatherForm.addEventListener('submit', (ev) => {
         <div class="stage">
             <div class="dot-flashing"></div>
         </div>
-    </div>
-    `;
-    //cityName.textContent = "Loading...";
+    </div>`;
     cityName.classList.remove("incorrect");
     coordinates.textContent = ``;
     forecast.textContent = ``;
     forecastImg.setAttribute("src", '');
-
-    fetch(`/weather?address=${searchedCity}`).then(data => console.log(data))
 
     fetch(`/weather?address=${searchedCity}`)
         .then(res => {

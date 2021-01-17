@@ -5,7 +5,8 @@
   "author": "POkulska <paulina.okulska@gmail.com>",
   "scripts": {
     "dev": "nodemon src/app.js -e js,hbs",
-    "sass": "sass --watch public/css/style.scss public/css/style.css"
+    "sass": "sass --watch public/css/style.scss public/css/style.css",
+    "start":"node src/app.js "
   },
   "license": "MIT",
   "dependencies": {

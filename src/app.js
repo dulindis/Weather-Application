@@ -5,18 +5,15 @@ import forecast from './utils/forecast.js';
 import geocode from './utils/geocode.js';
 
 const app = express();
-//const port; //write which port at the deployment
-
+const port = process.env.PORT || 3001;
 
 //directory paths
-
 const projectDir = `${path.resolve()}`;
 const publicDir = path.join(projectDir, './public/');
 const viewsPath = path.join(projectDir, './templates/views');
 const partialsPath = path.join(projectDir, './templates/partials/');
 
 //setting handlebars
-
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
@@ -36,8 +33,6 @@ app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({error: `You must provide a valid address`})
     } else {
-        //we want to find the function to run
-
         geocode(req.query.address, (error, {
             location,
             latitude,
@@ -51,7 +46,6 @@ app.get('/weather', (req, res) => {
                 if (error) {
                     return res.send({error: `${error}`});
                 }
-
                 res.send({
                     location,
                     lat:latitude,
@@ -87,4 +81,4 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3001, console.log('listening to 3001'));
+app.listen(port, console.log(`listening to port: ${port}`));
