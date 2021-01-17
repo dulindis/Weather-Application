@@ -19,7 +19,8 @@ body .wrapper .flex {
   }
 }
 body .wrapper .about-me-img,
-body .wrapper .about-project-img {
+body .wrapper .about-project-img,
+body .wrapper .email-img {
   width: 20px;
   height: 20px;
   padding: 10px;
@@ -27,13 +28,15 @@ body .wrapper .about-project-img {
 }
 @media only screen and (max-width: 480px) {
   body .wrapper .about-me-img,
-body .wrapper .about-project-img {
+body .wrapper .about-project-img,
+body .wrapper .email-img {
     width: 25px;
     height: 25px;
   }
 }
 body .wrapper .about-me-img img,
-body .wrapper .about-project-img img {
+body .wrapper .about-project-img img,
+body .wrapper .email-img img {
   width: 100%;
 }
 @media only screen and (max-width: 800px) {
@@ -82,7 +85,7 @@ body .wrapper .heading-2 {
 }
 body .wrapper .heading-3 {
   text-transform: uppercase;
-  margin-top: 30px;
+  margin-top: 25px;
   color: #777586;
 }
 body .wrapper .e-mail {

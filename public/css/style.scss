@@ -20,17 +20,18 @@ body {
 
         .flex {
             display: flex;
-            align-items:baseline;
+            align-items: baseline;
 
 
             @include respond(mobile) {
-                align-items:center;
+                align-items: center;
             }
 
         }
 
         .about-me-img,
-        .about-project-img {
+        .about-project-img,
+        .email-img {
             width: 20px;
             height: 20px;
             padding: 10px;
@@ -97,7 +98,7 @@ body {
 
         .heading-3 {
             text-transform: uppercase;
-            margin-top: 30px;
+            margin-top: 25px;
             color: $body-tertiary-color;
         }
 
