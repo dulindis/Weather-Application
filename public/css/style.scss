@@ -18,6 +18,36 @@ body {
         height: 100vh;
         // background-color: rgb(150, 128, 128);
 
+        .flex {
+            display: flex;
+            align-items:baseline;
+
+
+            @include respond(mobile) {
+                align-items:center;
+            }
+
+        }
+
+        .about-me-img,
+        .about-project-img {
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+
+            overflow: hidden;
+
+            @include respond(mobile) {
+                width: 25px;
+                height: 25px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+
         @include respond(tablet) {
             width: 70%;
             // background-color: olive;

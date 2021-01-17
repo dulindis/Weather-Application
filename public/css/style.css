@@ -9,6 +9,33 @@ body .wrapper {
   flex-direction: column;
   height: 100vh;
 }
+body .wrapper .flex {
+  display: flex;
+  align-items: baseline;
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper .flex {
+    align-items: center;
+  }
+}
+body .wrapper .about-me-img,
+body .wrapper .about-project-img {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper .about-me-img,
+body .wrapper .about-project-img {
+    width: 25px;
+    height: 25px;
+  }
+}
+body .wrapper .about-me-img img,
+body .wrapper .about-project-img img {
+  width: 100%;
+}
 @media only screen and (max-width: 800px) {
   body .wrapper {
     width: 70%;

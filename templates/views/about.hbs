@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="about">Weather App - {{title}}</title>
+    <link rel="icon" href="/img/icon.png">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -13,16 +14,48 @@
         {{>header}}
 
         <div class="flex-grow">
-            <h3 class="heading-3">about me</h3>
-            <div class="">My name is Paulina Okulska and I am an aspiring web developer. </div>
-            <h3 class="heading-3">About the project</h3>
-            <div class="">This weather application can help you get ready for any weather conditions that are ahead of
-                you. Enjoy!</div>
+
+            <div class="about-me">
+                <div class="flex">
+                    <div class="about-me-img"><img src="/img/about.png" alt=""></div>
+
+                    <h3 class="heading-3">about me</h3>
+                </div>
+                <div class="">My name is Paulina Okulska and I am an aspiring web developer. </div>
+            </div>
+            <div class="about-project">
+                <div class="flex">
+                    <div class="about-project-img"><img src="/img/icon.png" alt=""></div>
+                    <h3 class="heading-3">About the project</h3>
+                </div>
+                <div class="">This weather application can help you get ready for any weather conditions that are
+                    ahead of you. Enjoy!
+                </div>
+            </div>
+
+
+
+            {{!-- <div class="flex">
+                <div class="about-me-img"><img src="/img/about.png" alt=""></div>
+                <div class="about-me">
+                    <h3 class="heading-3">about me</h3>
+                    <div class="">My name is Paulina Okulska and I am an aspiring web developer. </div>
+                </div>
+            </div> --}}
+            {{!-- <div class="flex">
+                <div class="about-project-img"><img src="/img/icon.png" alt=""></div>
+                <div class="about-project">
+                    <h3 class="heading-3">About the project</h3>
+                    <div class="">This weather application can help you get ready for any weather conditions that are
+                        ahead of
+                        you. Enjoy!</div>
+                </div>
+            </div> --}}
         </div>
-        
+
         {{>footer}}
     </main>
-        <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/nav.js"></script>
 
 </body>
 

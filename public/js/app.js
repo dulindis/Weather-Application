@@ -1,4 +1,3 @@
-//form variables
 const weatherForm = document.querySelector('.weather-form');
 const input = document.querySelector('.input');
 const submitBtn = document.getElementById('submit-btn');
@@ -8,9 +7,6 @@ const forecast = document.querySelector('.forecast')
 const coordinates = document.querySelector('.coordinates');
 const forecastContainer = document.querySelector('.forecast-container')
 const forecastImg = document.getElementById('forecast-image');
-//navigation variables
-
-
 
 task.textContent = "write your city name";
 forecast.textContent = "";
@@ -57,4 +53,3 @@ weatherForm.addEventListener('submit', (ev) => {
             console.log(`error from fetch`, error);
         })
 })
-
