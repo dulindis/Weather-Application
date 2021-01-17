@@ -1,6 +1,6 @@
 body {
   font-family: arial, sans-serif;
-  color: #333;
+  color: #302f35;
 }
 body .wrapper {
   width: 50%;
@@ -9,10 +9,32 @@ body .wrapper {
   flex-direction: column;
   height: 100vh;
 }
+@media only screen and (max-width: 800px) {
+  body .wrapper {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper {
+    width: 85%;
+  }
+}
 body .wrapper .heading-1 {
   font-weight: 700;
   font-size: 72px;
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 800px) {
+  body .wrapper .heading-1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper .heading-1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
 }
 body .wrapper .heading-2 {
   font-weight: 300;
@@ -21,29 +43,40 @@ body .wrapper .heading-2 {
   color: #444;
   margin-top: 0;
 }
+@media only screen and (max-width: 800px) {
+  body .wrapper .heading-2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper .heading-2 {
+    font-size: 22px;
+  }
+}
 body .wrapper .heading-3 {
   text-transform: uppercase;
   margin-top: 30px;
+  color: #777586;
 }
 body .wrapper .e-mail {
   font-weight: 600;
 }
 body .wrapper .navigation {
-  color: #888;
+  color: #777586;
   list-style: none;
   display: flex;
   border-bottom: 1px solid #888;
   padding: 15px 0;
 }
 body .wrapper .navigation li a {
-  color: #333;
+  color: #302f35;
   margin-right: 16px;
   text-decoration: none;
   cursor: pointer;
   font-style: 36px;
 }
 body .wrapper .navigation li a:hover {
-  border-bottom: 1px solid #888;
+  border-bottom: 1px solid #777586;
   cursor: pointer;
 }
 body .wrapper .navigation li a.active {
@@ -54,8 +87,8 @@ body .wrapper .error-msg {
 }
 body .wrapper button {
   cursor: pointer;
-  border: 1px solid #888;
-  background: #888;
+  border: 1px solid #777586;
+  background: #777586;
   color: white;
   padding: 10px;
   text-transform: uppercase;
@@ -63,6 +96,12 @@ body .wrapper button {
 }
 body .wrapper .flex-grow {
   flex-grow: 1;
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper .flex-grow .weather-form {
+    display: flex;
+    flex-direction: column;
+  }
 }
 body .wrapper .flex-grow .input {
   border: 1px solid #ccc;
@@ -74,8 +113,13 @@ body .wrapper .flex-grow .input {
 body .wrapper .flex-grow #submit-btn {
   margin-left: 5px;
 }
-body .wrapper .flex-grow .task {
-  color: #888;
+@media only screen and (max-width: 480px) {
+  body .wrapper .flex-grow #submit-btn {
+    margin-left: 0px;
+  }
+}
+body .wrapper .flex-grow .city-name {
+  color: #302f35;
 }
 body .wrapper .flex-grow .incorrect {
   color: darkred;

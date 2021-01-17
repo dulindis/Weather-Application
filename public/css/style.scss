@@ -1,8 +1,8 @@
-$loading-base-color:#9b95b8;
-$loading-end-color:#ebe6ff;
-$body-primary-color:#333;
-$body-secondary-color:#444;
-$body-tertiary-color:#888;
+@import './mixins';
+@import './variables';
+
+
+
 
 body {
     font-family: arial, sans-serif;
@@ -11,15 +11,39 @@ body {
     .wrapper {
 
         width: 50%;
+        //min-width: 350px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         height: 100vh;
+        // background-color: rgb(150, 128, 128);
+
+        @include respond(tablet) {
+            width: 70%;
+            // background-color: olive;
+        }
+
+        @include respond(mobile) {
+            width: 85%;
+            // background-color: blue;
+        }
+
+
 
         .heading-1 {
             font-weight: 700;
             font-size: 72px;
             margin-bottom: 30px;
+
+            @include respond(tablet) {
+                font-size: 60px;
+                margin-bottom: 20px;
+            }
+
+            @include respond(mobile) {
+                font-size: 42px;
+                margin-bottom: 15px;
+            }
         }
 
         .heading-2 {
@@ -29,11 +53,22 @@ body {
             color: $body-secondary-color;
             margin-top: 0;
 
+
+            @include respond(tablet) {
+                font-size: 30px;
+
+            }
+
+            @include respond(mobile) {
+                font-size: 22px;
+
+            }
         }
 
         .heading-3 {
             text-transform: uppercase;
             margin-top: 30px;
+            color: $body-tertiary-color;
         }
 
         .e-mail {
@@ -60,7 +95,8 @@ body {
                 }
 
                 &.active {
-                    border-bottom: 1px solid $body-secondary-color;                }
+                    border-bottom: 1px solid $body-secondary-color;
+                }
 
 
 
@@ -84,6 +120,14 @@ body {
         .flex-grow {
             flex-grow: 1;
 
+            .weather-form {
+                @include respond(mobile) {
+                    display: flex;
+                    flex-direction: column;
+
+                }
+            }
+
             .input {
                 border: 1px solid #ccc;
                 padding: 10px;
@@ -94,11 +138,17 @@ body {
             }
 
             #submit-btn {
-                margin-left: 5px
+                margin-left: 5px;
+
+                @include respond(mobile) {
+                    margin-left: 0px;
+
+
+                }
             }
 
-            .task {
-                color: $body-tertiary-color;
+            .city-name {
+                color: $body-primary-color;
             }
 
             .incorrect {
