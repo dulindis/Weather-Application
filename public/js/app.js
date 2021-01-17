@@ -43,7 +43,7 @@ weatherForm.addEventListener('submit', (ev) => {
                 cityName.textContent = `${data.error}`
             } else {
                 cityName.textContent = `${data.location}`;
-                coordinates.textContent = `Lat: ${data.lat}, Lon: ${data.long}`;
+                coordinates.textContent = `Lat: ${data.lat}, Long: ${data.long}`;
                 forecast.textContent = `${ data.forecast}`;
                 forecastContainer.classList.add("active");
                 forecastImg.setAttribute("src", data.forecastImgUrl);
