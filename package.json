@@ -11,11 +11,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "milsymbol": "^2.0.0",
     "node-static": "^0.7.11",
     "postman-request": "^2.88.1-postman.28",
-    "sass": "^1.32.4",
-    "socket.io": "^3.1.0"
+    "sass": "^1.32.4"
   },
   "type": "module",
   "devDependencies": {
