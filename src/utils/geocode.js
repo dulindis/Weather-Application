@@ -20,6 +20,6 @@ const geocode = (address, callback) => {
             })
         }
     })
-}
+};
 
 export default geocode;

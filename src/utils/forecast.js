@@ -1,7 +1,6 @@
 //postman request
 import request from 'postman-request';
 
-
 const forecast = (address, lat, long, callback) => {
     let url;
     if (lat, long) {
@@ -30,21 +29,7 @@ const forecast = (address, lat, long, callback) => {
                 Date and local time:${parsedData.location.localtime}. Currently is ${parsedData.location.is_day ? "day" : "night" }. The temperaure at the moment is estimated to be ${parsedData.current.temperature}\u00B0 C , feels like ${parsedData.current.feelslike}\u00B0 C. The atmospheric pressure of ${parsedData.current.pressure} millibar. Cloud cover ${parsedData.current.cloudcover}%. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.precip}mm. UV index for today: ${parsedData.current.uv_index}. `
             })
         }
-
-
     })
 }
 
 export default forecast;
-
-
-
-// request(url, (err, res, body) => {
-//             if (err) {
-//                 callback(`unable to connec to weather service`, undefined)
-//             } else if (res.body.error) {
-//                 callback(`unable to find location ${res.body.error.info}`)
-//             } else {
-//                 callback(undefined, `The weather forecast for: ${parsedData.location.name} in ${parsedData.location.country}. 
-//                 In ${parsedData.location.name} is ${parsedData.location.is_day ? "day" : "night" }. The time now is ${parsedData.current.observation_time} o'clock. The current temperaure is ${parsedData.current.temperature} degrees, feels like ${parsedData.current.feelslike} degrees. The atmospheric pressure: ${parsedData.current.pressure}millibar. Cloud cover ${parsedData.current.cloudcover}. Humidity ${parsedData.current.humidity}% and precipitation ${parsedData.current.percip}mm. UV index for today: ${parsedData.current.uv_index}`)
-// }
