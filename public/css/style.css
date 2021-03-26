@@ -124,6 +124,11 @@ body .wrapper button {
   text-transform: uppercase;
   border-radius: 2px;
 }
+body .wrapper .geolocation {
+  border: 1px solid #777586;
+  background: white;
+  color: #777586;
+}
 body .wrapper .flex-grow {
   flex-grow: 1;
 }

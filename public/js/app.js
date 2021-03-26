@@ -1,3 +1,7 @@
+import {
+    EBADF
+} from "node:constants";
+
 const weatherForm = document.querySelector('.weather-form');
 const input = document.querySelector('.input');
 const submitBtn = document.getElementById('submit-btn');
@@ -12,21 +16,36 @@ const geolocationBtn = document.getElementById('geolocation-btn');
 task.textContent = "write your city name";
 forecast.textContent = "";
 
-weatherForm.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    const searchedCity = input.value;
+const fetchForecast = (option) => {
+    // const searchedCity = option || input.value;
+    ///geocoding/v5/{endpoint}/{longitude},{latitude}.json
+
     cityName.innerHTML = `
-    <div class="margin-left-30" data-title=".dot-flashing">
-        <div class="stage">
-            <div class="dot-flashing"></div>
-        </div>
-    </div>`;
+   <div class="margin-left-30" data-title=".dot-flashing">
+       <div class="stage">
+           <div class="dot-flashing"></div>
+       </div>
+   </div>`;
     cityName.classList.remove("incorrect");
     coordinates.textContent = ``;
     forecast.textContent = ``;
     forecastImg.setAttribute("src", '');
 
-    fetch(`/weather?address=${searchedCity}`)
+    let fetchUrl;
+
+    let searchedCity;
+    if (option) {
+        searchedCity = option;
+        const {
+            longitude,
+            latitude
+        } = searchedCity;
+        fetchUrl = `/weather?longitude=${longitude}&latitude=${latitude}`
+    } else {
+        searchedCity = input.value
+        fetchUrl = `/weather?address=${searchedCity}`
+    };
+    fetch(fetchUrl)
         .then(res => {
             if (res.ok) {
                 return res.json()
@@ -49,51 +68,41 @@ weatherForm.addEventListener('submit', (ev) => {
         }).catch(error => {
             console.log(`error from fetch`, error);
         })
-});
-
-geolocationBtn.addEventListener('click', ev => {
-    //ev.preventDefault();
-    // const url = `https://google.com/maps?q=${coords.latitude},${coords.longitude}`
+};
+const geolocateNavigator = () => {
     if (!navigator.geolocation) {
-        //you can use a modal instead of an alert
         return alert('Geolocation is not supported by your browser.')
     }
     geolocationBtn.setAttribute('disabled', 'disabled');
 
     navigator.geolocation.getCurrentPosition((position) => {
-
         const coordinates = {
-            longitude: position.coords.longitude,
-            latitude: position.coords.latitude
-
-        }
-
-        const cityName = input.value;
-        input.value = `${coordinates.longitude}, ${coordinates.latitude}`;
-    
+            longitude: (position.coords.longitude).toFixed(4),
+            latitude: (position.coords.latitude).toFixed(4)
+        };
+        //input.value = `${coordinates.longitude}, ${coordinates.latitude}`;
         geolocationBtn.removeAttribute('disabled');
-        console.log('location shared sucessfully', coordinates);
-
+        return coordinates
+        //console.log('location shared sucessfully', coordinates);
     })
 
-})
 
+}
 
-
-$sendLocationButton.addEventListener('click', (ev) => {
-    if (!navigator.geolocation) {
-        //you can use a modal instead of an alert
-        return alert('Geolocation is not supported by your browser.')
+weatherForm.addEventListener('submit', (ev) => {
+    //console.log('event', ev.submitter.id);
+    ev.preventDefault();
+    if (ev.submitter.id === "submit-btn") {
+        fetchForecast()
+    } else {
+        const coordinates = geolocateNavigator();
+        fetchForecast(coordinates)
     }
-    $sendLocationButton.setAttribute('disabled', 'disabled');
 
-    navigator.geolocation.getCurrentPosition((position) => {
-        socket.emit('sendLocation', {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-        }, () => {
-            $sendLocationButton.removeAttribute('disabled');
-            console.log('location shared sucessfully');
-        });
-    })
 });
+
+// geolocationBtn.addEventListener('submit', ev => {
+//     ev.preventDefault();
+//     const coordinates = geolocateNavigator();
+//     fetchForecast(coordinates)
+// })

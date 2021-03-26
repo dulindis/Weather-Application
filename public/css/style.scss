@@ -148,6 +148,12 @@ body {
             border-radius: 2px;
         }
 
+        .geolocation {
+            border: 1px solid $body-tertiary-color;
+            background: white;
+            color: $body-tertiary-color;
+        }
+
         .flex-grow {
             flex-grow: 1;
 
@@ -207,7 +213,7 @@ body {
         }
 
         .contact-details {
-            margin-top:0px;
+            margin-top: 0px;
         }
 
         footer {

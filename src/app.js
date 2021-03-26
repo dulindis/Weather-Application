@@ -30,28 +30,46 @@ app.get('', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    //TOFIX: attempt to fix the error :Access to script at 'node:constants' from origin 'http://localhost:3001' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
+    //app.js:3 GET node:constants net::ERR_FAILED"
+    // res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    // res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     if (!req.query.address) {
-        return res.send({error: `You must provide a valid address`})
+        return res.send({
+            error: `You must provide a valid address`
+        })
     } else {
         geocode(req.query.address, (error, {
             location,
             latitude,
             longitude
-        }={}) => {
+        } = {}) => {
             if (error) {
-                return res.send({error: `${error}`});
+                return res.send({
+                    error: `${error}`
+                });
             }
 
-            forecast(location, latitude, longitude, (error, {forecastImgUrl,forecastData}) => {
+            forecast(location, latitude, longitude, (error, {
+                forecastImgUrl,
+                forecastData
+            }) => {
                 if (error) {
-                    return res.send({error: `${error}`});
+                    return res.send({
+                        error: `${error}`
+                    });
                 }
+                // res.setHeaders({
+                //     "Access-Control-Allow-Origin": '*'
+                // })
                 res.send({
                     location,
-                    lat:latitude,
-                    long:longitude,
+                    lat: latitude,
+                    long: longitude,
                     forecastImgUrl,
-                    forecast:forecastData
+                    forecast: forecastData
                 })
             })
         });
@@ -62,7 +80,7 @@ app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
         name: 'Paulina Okulska',
-        text:'about me and the page'
+        text: 'about me and the page'
     })
 })
 
@@ -70,13 +88,13 @@ app.get('/contact', (req, res) => {
     res.render('contact', {
         title: 'Contact',
         name: 'Paulina Okulska',
-        text:'about me and the page'
+        text: 'about me and the page'
     })
 })
 
 app.get('*', (req, res) => {
     res.render('404', {
-        title:'ERROR 404',
+        title: 'ERROR 404',
         error: 'Page not found. Please type another url.'
     })
 })
