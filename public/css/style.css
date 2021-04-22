@@ -117,8 +117,8 @@ body .wrapper .error-msg {
 }
 body .wrapper button {
   cursor: pointer;
-  border: 1px solid #777586;
-  background: #777586;
+  border: 1px solid #444;
+  background: #444;
   color: white;
   padding: 10px;
   text-transform: uppercase;
@@ -142,11 +142,32 @@ body .wrapper .flex-grow .input {
 }
 body .wrapper .flex-grow #submit-btn {
   margin-left: 5px;
+  transition: all 0.5s ease;
 }
 @media only screen and (max-width: 480px) {
   body .wrapper .flex-grow #submit-btn {
     margin-left: 0px;
   }
+}
+body .wrapper .flex-grow #submit-btn:hover {
+  margin-left: 5px;
+  border: 1px solid #777586;
+  background-color: #777586;
+}
+body .wrapper .flex-grow #geolocation-btn {
+  margin-left: 5px;
+  background: white;
+  color: #444;
+  transition: all 0.5s ease;
+}
+@media only screen and (max-width: 480px) {
+  body .wrapper .flex-grow #geolocation-btn {
+    margin-left: 0px;
+  }
+}
+body .wrapper .flex-grow #geolocation-btn:hover {
+  background: #9b95b8;
+  color: #302f35;
 }
 body .wrapper .flex-grow .city-name {
   color: #302f35;

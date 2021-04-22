@@ -140,8 +140,8 @@ body {
 
         button {
             cursor: pointer;
-            border: 1px solid $body-tertiary-color;
-            background: $body-tertiary-color;
+            border: 1px solid $body-secondary-color;
+            background: $body-secondary-color;
             color: white;
             padding: 10px;
             text-transform: uppercase;
@@ -170,12 +170,33 @@ body {
 
             #submit-btn {
                 margin-left: 5px;
+                transition: all 0.5s ease ;
 
                 @include respond(mobile) {
                     margin-left: 0px;
-
-
                 }
+            }
+
+            #submit-btn:hover {
+                margin-left: 5px;
+                border: 1px solid $body-tertiary-color;
+                background-color: $body-tertiary-color;
+            }
+
+            #geolocation-btn {
+                margin-left: 5px;
+                background: white;
+                color: $body-secondary-color;
+                transition: all 0.5s ease ;
+
+                @include respond(mobile) {
+                    margin-left: 0px;
+                }
+            }
+
+            #geolocation-btn:hover {
+                background: $loading-base-color;
+                color: $body-primary-color
             }
 
             .city-name {
@@ -207,7 +228,7 @@ body {
         }
 
         .contact-details {
-            margin-top:0px;
+            margin-top: 0px;
         }
 
         footer {
