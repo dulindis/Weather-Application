@@ -166,7 +166,8 @@ body .wrapper .flex-grow #geolocation-btn {
   }
 }
 body .wrapper .flex-grow #geolocation-btn:hover {
-  background: #9b95b8;
+  background: #ebe6ff;
+  border: 1px solid #ebe6ff;
   color: #302f35;
 }
 body .wrapper .flex-grow .city-name {

@@ -170,7 +170,7 @@ body {
 
             #submit-btn {
                 margin-left: 5px;
-                transition: all 0.5s ease ;
+                transition: all 0.5s ease;
 
                 @include respond(mobile) {
                     margin-left: 0px;
@@ -187,7 +187,7 @@ body {
                 margin-left: 5px;
                 background: white;
                 color: $body-secondary-color;
-                transition: all 0.5s ease ;
+                transition: all 0.5s ease;
 
                 @include respond(mobile) {
                     margin-left: 0px;
@@ -195,7 +195,8 @@ body {
             }
 
             #geolocation-btn:hover {
-                background: $loading-base-color;
+                background: $loading-end-color;
+                border: 1px solid $loading-end-color;
                 color: $body-primary-color
             }
 
